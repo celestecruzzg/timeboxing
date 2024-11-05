@@ -1,3 +1,4 @@
+// src/activities/activities.controller.ts
 import { Controller, Post, Body, Get } from '@nestjs/common';
 import { ActivitiesService } from './activities.service';
 import { Activities } from '@prisma/client';
@@ -10,11 +11,9 @@ export class ActivitiesController {
   async create(@Body() activityData: { 
     activity_title: string; 
     activity_description: string; 
-    activity_date: Date;
     start_hour: Date; 
     end_hour: Date; 
-    task_id: number 
-  }): Promise<Activities> {
+    task_id: number }): Promise<Activities> {
     return this.activitiesService.createActivity(activityData);
   }
 

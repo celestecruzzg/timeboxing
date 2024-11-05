@@ -1,3 +1,4 @@
+// src/user/user.service.ts
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
 import { User } from '@prisma/client';
@@ -13,12 +14,12 @@ export class UserService {
     });
 
     if (!user) {
-      return null;
+      return null; 
     }
 
     const isPasswordValid = await bcrypt.compare(password, user.password);
     if (!isPasswordValid) {
-      return null;
+      return null; 
     }
 
     return user;

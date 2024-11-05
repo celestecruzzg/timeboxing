@@ -12,9 +12,9 @@ export class UserController {
     const user = await this.userService.login(email, password);
     
     if (!user) {
-      return { message: 'Invalid credentials' };
+      return { message: 'Invalid credentials' }; 
     }
     
-    return { message: 'Login successful', user };
+    return { message: 'Login successful', user }; 
   }
 }
